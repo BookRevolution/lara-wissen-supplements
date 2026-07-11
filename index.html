@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supplements — was wirklich wirkt | Dr. Lara Vadlau</title>
+<meta name="description" content="Der ehrliche Longevity-Supplement-Guide von Dr. Lara Vadlau: evidenzbasiert, nach Studienlage sortiert, ohne Hype. Was belegt ist, was Marketing ist — und wie du selbst entscheidest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#d4af37;
+  --gold-soft:#e6c86b;
+  --dark:#141b28;
+  --darker:#0d131e;
+  --panel:#1b2434;
+  --panel-2:#212c40;
+  --line:rgba(212,175,55,.18);
+  --text:#e8ecf3;
+  --muted:#9aa6bb;
+  --muted-2:#6f7c93;
+  --green:#5fbf8f;
+  --amber:#e0a94a;
+  --red:#d97a72;
+  --maxw:1120px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--darker);
+  color:var(--text);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.serif{font-family:'Fraunces',Georgia,serif;font-weight:500}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:18px;
+}
+a{color:var(--gold-soft);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft));z-index:2000;transition:width .1s}
+
+/* nav */
+header{position:sticky;top:0;z-index:1000;background:rgba(13,19,30,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+header .container{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Fraunces',serif;font-size:19px;font-weight:600;letter-spacing:-.01em;color:#fff}
+.brand span{color:var(--gold)}
+nav.links{display:flex;gap:30px}
+nav.links a{color:var(--muted);font-size:13.5px;font-weight:500}
+nav.links a:hover{color:var(--gold);text-decoration:none}
+@media(max-width:760px){nav.links{display:none}}
+
+/* hero */
+.hero{position:relative;padding:88px 0 76px;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:680px;height:680px;background:radial-gradient(circle,rgba(212,175,55,.12) 0%,transparent 68%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40%;left:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(95,191,143,.06) 0%,transparent 70%);pointer-events:none}
+.hero .container{position:relative;z-index:2}
+.hero h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5.4vw,60px);line-height:1.08;letter-spacing:-.02em;color:#fff;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--gold);position:relative;white-space:nowrap}
+.hero .lede{margin-top:26px;font-size:clamp(16px,2.1vw,20px);color:var(--muted);max-width:56ch;line-height:1.6}
+.hero .meta{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;color:var(--text);background:rgba(212,175,55,.05)}
+.pill b{color:var(--gold)}
+.byline{margin-top:38px;display:flex;align-items:center;gap:14px;color:var(--muted);font-size:14px}
+.byline .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#9c7d1e);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;color:#1a1206;font-size:17px}
+.byline b{color:var(--text)}
+
+/* section scaffold */
+section{padding:74px 0;border-top:1px solid rgba(255,255,255,.04)}
+.sec-head{max-width:64ch;margin-bottom:44px}
+.sec-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,3.6vw,38px);line-height:1.15;letter-spacing:-.01em;color:#fff}
+.sec-head p{margin-top:16px;color:var(--muted);font-size:17px}
+
+/* mental model grid */
+.model{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:860px){.model{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.model{grid-template-columns:1fr}}
+.model .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:24px}
+.model .card .k{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.model .card h3{font-family:'Fraunces',serif;font-size:20px;margin:10px 0 8px;color:#fff;font-weight:500}
+.model .card p{color:var(--muted);font-size:14.5px}
+.arrow-row{text-align:center;color:var(--gold);font-size:24px;margin:22px 0}
+.outcome{background:linear-gradient(135deg,rgba(212,175,55,.10),rgba(212,175,55,.02));border:1px solid var(--line);border-radius:16px;padding:26px 28px;text-align:center}
+.outcome b{color:var(--gold)}
+
+.principle{margin-top:28px;background:var(--darker);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 24px;color:var(--text);font-size:16px}
+.principle .l{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px}
+
+/* evidence legend */
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:8px}
+.grade{display:inline-flex;align-items:center;gap:9px;font-size:14px;color:var(--muted)}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+.dot.g{background:var(--green)} .dot.a{background:var(--amber)} .dot.r{background:var(--red)}
+
+/* supplement cards */
+.supp{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:0;margin-bottom:18px;overflow:hidden}
+.supp .top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:26px 28px 18px;cursor:pointer}
+.supp .top h3{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:#fff;display:flex;align-items:center;gap:12px}
+.supp .top .sub{color:var(--muted-2);font-size:14px;margin-top:4px}
+.badge{font-size:11.5px;font-weight:600;letter-spacing:.04em;padding:6px 12px;border-radius:999px;white-space:nowrap;flex:none}
+.badge.g{background:rgba(95,191,143,.14);color:var(--green);border:1px solid rgba(95,191,143,.3)}
+.badge.a{background:rgba(224,169,74,.14);color:var(--amber);border:1px solid rgba(224,169,74,.3)}
+.badge.r{background:rgba(217,122,114,.14);color:var(--red);border:1px solid rgba(217,122,114,.3)}
+.supp .body{padding:0 28px 26px}
+.supp .body .row{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.05);font-size:15px}
+.supp .body .row .lab{color:var(--gold);font-weight:600;font-size:13px;letter-spacing:.03em;text-transform:uppercase;padding-top:2px}
+.supp .body .row .val{color:var(--text)}
+.supp .body .row .val .muted{color:var(--muted)}
+@media(max-width:600px){.supp .body .row{grid-template-columns:1fr;gap:4px}}
+
+/* table */
+.tbl{width:100%;border-collapse:collapse;font-size:15px;overflow:hidden;border-radius:14px;border:1px solid var(--line)}
+.tbl th,.tbl td{padding:15px 18px;text-align:left;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:top}
+.tbl th{background:var(--panel-2);color:var(--gold);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+.tbl td{color:var(--muted)}
+.tbl td b{color:var(--text)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl-wrap{overflow-x:auto}
+
+/* steps for reading a study */
+.steps{counter-reset:s;display:grid;gap:14px}
+.step{display:flex;gap:20px;background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px 24px}
+.step .n{counter-increment:s;font-family:'Fraunces',serif;font-size:26px;color:var(--gold);font-weight:600;flex:none;width:40px}
+.step .n::before{content:counter(s,decimal-leading-zero)}
+.step h4{font-size:17px;color:#fff;margin-bottom:5px;font-weight:600}
+.step p{color:var(--muted);font-size:15px}
+
+/* red flags */
+.flags{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.flags{grid-template-columns:1fr}}
+.flag{background:var(--panel);border:1px solid rgba(217,122,114,.22);border-radius:14px;padding:20px 22px}
+.flag h4{color:var(--red);font-size:15px;margin-bottom:6px;display:flex;gap:10px;align-items:center}
+.flag p{color:var(--muted);font-size:14.5px}
+
+/* callout */
+.callout{background:linear-gradient(135deg,rgba(212,175,55,.08),transparent);border:1px solid var(--line);border-radius:16px;padding:28px 30px;margin-top:8px}
+.callout .l{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.callout p{color:var(--text);font-size:16.5px}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--panel),var(--darker));border:1px solid var(--line);border-radius:22px;padding:52px 44px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:520px;height:420px;background:radial-gradient(circle,rgba(212,175,55,.14),transparent 70%);pointer-events:none}
+.cta h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(26px,4vw,40px);color:#fff;position:relative;line-height:1.14}
+.cta p{color:var(--muted);max-width:52ch;margin:18px auto 0;position:relative;font-size:17px}
+.btn{display:inline-block;margin-top:30px;background:linear-gradient(135deg,var(--gold),var(--gold-soft));color:#1a1206;font-weight:600;font-size:15.5px;padding:15px 34px;border-radius:999px;position:relative;transition:transform .2s,box-shadow .2s;box-shadow:0 10px 30px rgba(212,175,55,.22)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(212,175,55,.32);text-decoration:none}
+.cta .socials{margin-top:26px;display:flex;gap:24px;justify-content:center;position:relative}
+.cta .socials a{color:var(--muted);font-size:13.5px}
+
+/* disclaimer + footer */
+.disclaimer{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:22px 26px;color:var(--muted-2);font-size:13.5px;line-height:1.6}
+.disclaimer b{color:var(--muted)}
+footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted-2);font-size:13px}
+footer .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+footer a{color:var(--muted)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header>
+  <div class="container">
+    <div class="brand">Dr. Lara <span>Vadlau</span></div>
+    <nav class="links">
+      <a href="#modell">Denkmodell</a>
+      <a href="#tiers">Was wirkt</a>
+      <a href="#lesen">Studien lesen</a>
+      <a href="#warnsignale">Warnsignale</a>
+      <a href="#start">Start</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none">
+  <div class="container">
+    <div class="eyebrow reveal">Longevity-Wissen · Vertiefung zum Reel</div>
+    <h1 class="reveal">Supplements: was <em>wirklich</em> wirkt — und was nur teuer ist.</h1>
+    <p class="lede reveal">Die Supplement-Industrie verkauft dir Hoffnung in Kapselform. Ich zeige dir die Evidenz dahinter — sortiert nach Studienlage, nicht nach Marketingbudget. Damit du selbst entscheidest, was in deinen Körper kommt.</p>
+    <div class="meta reveal">
+      <span class="pill"><b>Evidenzbasiert</b> · nach Studienqualität sortiert</span>
+      <span class="pill"><b>~9 Min</b> Lesezeit</span>
+      <span class="pill">Kein bezahlter Link, keine Affiliate-Codes</span>
+    </div>
+    <div class="byline reveal">
+      <div class="avatar">LV</div>
+      <div>Von <b>Dr. Lara Vadlau</b> · Longevity &amp; evidenzbasierte Prävention</div>
+    </div>
+  </div>
+</section>
+
+<!-- MENTAL MODEL -->
+<section id="modell">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Das Denkmodell</div>
+      <h2>Bevor du irgendetwas kaufst: die Hierarchie.</h2>
+      <p>Ein Supplement heißt Nahrungs-<em>ergänzung</em>, weil es ergänzt — nicht ersetzt. 90&nbsp;% der Wirkung liegen in vier Hebeln, die nichts kosten. Erst wenn die sitzen, lohnt die Frage nach der Pille.</p>
+    </div>
+    <div class="model">
+      <div class="card reveal"><div class="k">Fundament 1</div><h3>Schlaf</h3><p>Kein Molekül der Welt kompensiert chronische 5-Stunden-Nächte. Der stärkste, billigste Longevity-Hebel überhaupt.</p></div>
+      <div class="card reveal"><div class="k">Fundament 2</div><h3>Bewegung</h3><p>Kraft- &amp; Ausdauertraining verändern Mitochondrien, Insulinsensitivität und Muskelkraft messbar — kein Supplement erreicht das.</p></div>
+      <div class="card reveal"><div class="k">Fundament 3</div><h3>Ernährung</h3><p>Protein, Gemüse, Ballaststoffe. Die meisten „Mangel"-Zustände sind ein Ernährungs-, kein Kapselproblem.</p></div>
+      <div class="card reveal"><div class="k">Fundament 4</div><h3>Stress &amp; Sonne</h3><p>Cortisol-Management und Tageslicht steuern Hormone und Schlaf — die Basis, auf der alles andere aufbaut.</p></div>
+    </div>
+    <div class="arrow-row reveal">↓</div>
+    <div class="outcome reveal">Supplements sitzen <b>obendrauf</b> — sie schließen gezielte Lücken, die Bluttests und Lebensumstände belegen. Nicht andersherum.</div>
+    <div class="principle reveal">
+      <span class="l">Kernprinzip</span>
+      Frag bei jedem Produkt zwei Dinge: <b>Habe ich einen belegten Mangel oder ein belegtes Ziel?</b> Und: <b>Gibt es Humanstudien in realistischer Dosis?</b> Fehlt eine der beiden Antworten, kaufst du Hoffnung, nicht Wirkung.
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section id="tiers">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Die Evidenz-Stufen</div>
+      <h2>Was die Studienlage hergibt — ehrlich einsortiert.</h2>
+      <p>Ich teile Supplements nicht in „gut" und „schlecht", sondern nach der Stärke der Belege. Tipp die Karten an für Dosis, Studienlage und die Fallstricke.</p>
+    </div>
+    <div class="legend reveal">
+      <span class="grade"><span class="dot g"></span>Solide Humanevidenz</span>
+      <span class="grade"><span class="dot a"></span>Vielversprechend, aber offen</span>
+      <span class="grade"><span class="dot r"></span>Hype &gt; Beleg</span>
+    </div>
+
+    <!-- Tier A -->
+    <h3 class="serif reveal" style="font-size:20px;color:var(--green);margin:34px 0 16px">Stufe 1 · Solide belegt</h3>
+
+    <div class="supp reveal">
+      <div class="top"><div><h3>Vitamin&nbsp;D3 <span class="badge g" style="margin-left:4px">Solide belegt</span></h3><div class="sub">Bei nachgewiesenem Mangel — und der ist in unseren Breiten die Regel.</div></div></div>
+      <div class="body">
+        <div class="row"><div class="lab">Wofür</div><div class="val">Knochen, Immunfunktion, Muskelkraft. Relevant besonders für Frauen mit Blick auf Knochendichte nach der Menopause.</div></div>
+        <div class="row"><div class="lab">Dosis</div><div class="val">Typisch 1.000–2.000 IE/Tag zur Erhaltung. <span class="muted">Höher nur nach Blutwert (25-OH-D). Mit K2 &amp; Magnesium als Kofaktoren sinnvoll.</span></div></div>
+        <div class="row"><div class="lab">Der Haken</div><div class="val muted">„Mehr" ist nicht besser — Hochdosis ohne Messung kann schaden. Erst testen (Zielbereich ~30–50 ng/ml), dann dosieren.</div></div>
+      </div>
+    </div>
+
+    <div class="supp reveal">
+      <div class="top"><div><h3>Omega-3 (EPA/DHA) <span class="badge g" style="margin-left:4px">Solide belegt</span></h3><div class="sub">Einer der am besten untersuchten Wirkstoffe überhaupt.</div></div></div>
+      <div class="body">
+        <div class="row"><div class="lab">Wofür</div><div class="val">Entzündungsregulation, Herz-Kreislauf, Gehirn. Sinnvoll vor allem, wenn du selten fetten Fisch isst.</div></div>
+        <div class="row"><div class="lab">Dosis</div><div class="val">1–2&nbsp;g EPA+DHA/Tag. <span class="muted">Auf tatsächlichen EPA/DHA-Gehalt achten, nicht auf „Fischöl gesamt". Omega-3-Index im Blut messbar.</span></div></div>
+        <div class="row"><div class="lab">Der Haken</div><div class="val muted">Qualität schwankt stark. Ranzige Öle (oxidiert) sind kontraproduktiv — auf Frische, Triglycerid-Form und Drittlabor-Tests achten.</div></div>
+      </div>
+    </div>
+
+    <div class="supp reveal">
+      <div class="top"><div><h3>Kreatin-Monohydrat <span class="badge g" style="margin-left:4px">Solide belegt</span></h3><div class="sub">Das am besten belegte Sport-Supplement — und zunehmend spannend für Frauen &amp; Gehirn.</div></div></div>
+      <div class="body">
+        <div class="row"><div class="lab">Wofür</div><div class="val">Muskelkraft &amp; -erhalt (zentral fürs Altern), zunehmend Daten zu kognitiver Leistung und Erholung bei Schlafmangel.</div></div>
+        <div class="row"><div class="lab">Dosis</div><div class="val">3–5&nbsp;g/Tag, dauerhaft, Timing egal. <span class="muted">Nur Monohydrat — teure „neue Formen" bringen keinen belegten Mehrwert.</span></div></div>
+        <div class="row"><div class="lab">Der Haken</div><div class="val muted">Die anfängliche Gewichtszunahme ist Wasser in der Muskelzelle, kein Fett. Bei Nierenerkrankung ärztlich abklären.</div></div>
+      </div>
+    </div>
+
+    <div class="supp reveal">
+      <div class="top"><div><h3>Magnesium <span class="badge g" style="margin-left:4px">Solide belegt</span></h3><div class="sub">An hunderten Enzymreaktionen beteiligt — Mangel ist verbreitet.</div></div></div>
+      <div class="body">
+        <div class="row"><div class="lab">Wofür</div><div class="val">Muskel- &amp; Nervenfunktion, Schlafqualität, Glukosestoffwechsel. Guter Allrounder bei belegtem Bedarf.</div></div>
+        <div class="row"><div class="lab">Dosis</div><div class="val">200–400&nbsp;mg elementares Magnesium. <span class="muted">Form zählt: Glycinat/Citrat werden gut aufgenommen; Oxid kaum (wirkt v. a. abführend).</span></div></div>
+        <div class="row"><div class="lab">Der Haken</div><div class="val muted">Serum-Magnesium bildet den Körperspeicher schlecht ab — ein „normaler" Blutwert schließt einen Mangel nicht sicher aus.</div></div>
+      </div>
+    </div>
+
+    <!-- Tier B -->
+    <h3 class="serif reveal" style="font-size:20px;color:var(--amber);margin:38px 0 16px">Stufe 2 · Vielversprechend, aber offen</h3>
+
+    <div class="supp reveal">
+      <div class="top"><div><h3>NAD⁺-Vorläufer (NMN / NR) <span class="badge a" style="margin-left:4px">Offen</span></h3><div class="sub">Der Longevity-Liebling — mit einer differenzierteren Geschichte, als Instagram erzählt.</div></div></div>
+      <div class="body">
+        <div class="row"><div class="lab">Die Idee</div><div class="val">NAD⁺ steuert Mitochondrien &amp; Zellreparatur und sinkt mit dem Alter im Gewebe. Vorläufer sollen es wieder anheben.</div></div>
+        <div class="row"><div class="lab">Was neu ist</div><div class="val">Zwei Studien 2026 (<i>Nature Metabolism</i>) zeigen: <b>Vollblut-NAD⁺ ändert sich kaum mit Alter oder Lebensstil</b> — der teure NAD⁺-Bluttest sagt also wenig aus. <span class="muted">Nur NR hob den Blutwert überhaupt messbar.</span></div></div>
+        <div class="row"><div class="lab">Die Nuance</div><div class="val">Das heißt <b>nicht</b> „NAD⁺ ist egal": In definierten, defizitären Kontexten (DNA-Reparaturstörungen) zeigt Anhebung mechanistischen Nutzen (<i>Aging Cell</i> 2026). <span class="muted">Blut ≠ Gewebe, Kontext entscheidet.</span></div></div>
+        <div class="row"><div class="lab">Mein Take</div><div class="val muted">Belege für gesunde Menschen &amp; harte Endpunkte (leben wir länger/besser?) fehlen noch. Interessant und plausibel — aber kein „Muss", und definitiv keine Wunderpille zum Wunderpreis.</div></div>
+      </div>
+    </div>
+
+    <div class="supp reveal">
+      <div class="top"><div><h3>Creatin fürs Gehirn / Kollagen / Spermidin <span class="badge a" style="margin-left:4px">Offen</span></h3><div class="sub">Sammelkarte für die „spannend, aber noch dünn"-Kandidaten.</div></div></div>
+      <div class="body">
+        <div class="row"><div class="lab">Kollagen</div><div class="val">Erste Daten zu Haut-Elastizität &amp; Gelenken sind ordentlich, aber viele Studien sind herstellerfinanziert. <span class="muted">Als Protein-Boost harmlos, als Wundermittel überverkauft.</span></div></div>
+        <div class="row"><div class="lab">Spermidin</div><div class="val">Autophagie-Mechanismus ist elegant, Humandaten (v. a. Kognition) noch früh und klein. <span class="muted">Beobachtend vielversprechend, kausal offen.</span></div></div>
+        <div class="row"><div class="lab">Der Haken</div><div class="val muted">Mechanismus im Reagenzglas ≠ Nutzen im Menschen. Bei allem hier gilt: abwarten lohnt mehr als Frühkaufen.</div></div>
+      </div>
+    </div>
+
+    <!-- Tier C -->
+    <h3 class="serif reveal" style="font-size:20px;color:var(--red);margin:38px 0 16px">Stufe 3 · Hype größer als Beleg</h3>
+
+    <div class="supp reveal">
+      <div class="top"><div><h3>„Multivitamin für alle" &amp; Hochdosis-Einzelvitamine <span class="badge r" style="margin-left:4px">Hype</span></h3><div class="sub">Die Gießkanne ist selten die Antwort.</div></div></div>
+      <div class="body">
+        <div class="row"><div class="lab">Das Problem</div><div class="val">Große Studien finden für gesunde, gut ernährte Menschen kaum harten Nutzen durch Standard-Multivitamine. Bei einigen fettlöslichen Vitaminen kann Hochdosis <b>schaden</b>.</div></div>
+        <div class="row"><div class="lab">Vitamin C &amp; Co.</div><div class="val muted">2026 zeigte eine große Studie: höhere Vitamin-C-Spiegel gehen mit mehr grauer Hirnsubstanz einher — aber rein <b>beobachtend</b>. Das ist ein Argument für Gemüse &amp; Obst, nicht für Hochdosis-Pillen.</div></div>
+        <div class="row"><div class="lab">Besser</div><div class="val muted">Gezielt statt breit: das eine, das du laut Bluttest oder Lebensumständen brauchst — nicht 25 Zutaten „zur Sicherheit".</div></div>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:22px">
+      <div class="l">Warum diese Sortierung dich schützt</div>
+      <p>Generische Supplement-Accounts verkaufen dir jede Woche das nächste Molekül. Der Unterschied zu seriöser Longevity: Wir sagen auch, <b>wann Blut nicht Gewebe ist, wann Korrelation nicht Kausalität ist, und wann du dein Geld besser sparst.</b> Genau das trennt Aufklärung von Verkauf.</p>
+    </div>
+  </div>
+</section>
+
+<!-- READ A STUDY -->
+<section id="lesen">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Selbst entscheiden</div>
+      <h2>In 5 Fragen erkennst du, ob eine Studie etwas taugt.</h2>
+      <p>Du musst keine Wissenschaftlerin sein. Diese fünf Fragen filtern 90&nbsp;% des Marketing-Lärms — bei jedem „Studien zeigen…"-Post.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="n"></div><div><h4>War es ein Mensch — oder ein Wurm?</h4><p>Viele Schlagzeilen beruhen auf Zellkultur oder Fadenwürmern. Faszinierend als Mechanismus, aber nicht 1:1 auf dich übertragbar. Frag immer: Humanstudie oder nicht?</p></div></div>
+      <div class="step reveal"><div class="n"></div><div><h4>Wie viele Teilnehmer, wie lange?</h4><p>12 Personen über 4 Wochen ist eine Pilotstudie, keine Gewissheit. Große Kohorten über Jahre wiegen schwerer als spektakuläre Mini-Studien.</p></div></div>
+      <div class="step reveal"><div class="n"></div><div><h4>Korrelation oder Kausalität?</h4><p>„Menschen mit hohem X sind gesünder" heißt nicht „X macht gesund". Vielleicht essen sie einfach insgesamt besser. Beobachtung ≠ Beweis.</p></div></div>
+      <div class="step reveal"><div class="n"></div><div><h4>Wer hat bezahlt?</h4><p>Herstellerfinanzierte Studien sind nicht wertlos, aber lies sie kritischer. Ein Interessenkonflikt gehört auf den Prüfstand.</p></div></div>
+      <div class="step reveal"><div class="n"></div><div><h4>Realistische Dosis — und harter Endpunkt?</h4><p>Wirkte die Studiendosis, die kein Mensch im Alltag nimmt? Und wurde gemessen, was zählt (Lebensqualität, Krankheit) — oder nur ein Laborwert, der gut aussieht?</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RED FLAGS -->
+<section id="warnsignale">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Warnsignale</div>
+      <h2>Woran du unseriöse Supplement-Werbung sofort erkennst.</h2>
+    </div>
+    <div class="flags">
+      <div class="flag reveal"><h4>⚑ „Wissenschaftlich bewiesen"</h4><p>Seriöse Forschung spricht in Wahrscheinlichkeiten und Kontexten. Absolutheit ist ein Verkaufston, kein wissenschaftlicher.</p></div>
+      <div class="flag reveal"><h4>⚑ Proprietäre Blends</h4><p>„Longevity-Komplex" ohne Einzeldosen verschleiert, dass von den Wirkstoffen oft nur Spuren drin sind.</p></div>
+      <div class="flag reveal"><h4>⚑ Ein Mittel gegen alles</h4><p>Energie, Haut, Schlaf, Fokus, Immunsystem — gleichzeitig. Je mehr Versprechen, desto weniger belegt jedes einzelne.</p></div>
+      <div class="flag reveal"><h4>⚑ Dringlichkeit &amp; Rabatt-Countdown</h4><p>Deine Zellbiologie hat keine Deadline. Künstlicher Kaufdruck zielt aufs Gefühl, nicht auf deinen Bedarf.</p></div>
+      <div class="flag reveal"><h4>⚑ Ein Laborwert als Wunder</h4><p>„Hebt deinen NAD⁺-Spiegel!" — ohne zu sagen, ob das im relevanten Gewebe passiert oder überhaupt etwas bewirkt.</p></div>
+      <div class="flag reveal"><h4>⚑ Kein Drittlabor, keine Transparenz</h4><p>Ohne unabhängige Reinheits- &amp; Gehaltsprüfung weißt du nicht, was — und wie viel — wirklich in der Kapsel ist.</p></div>
+    </div>
+    <div class="principle reveal" style="margin-top:26px">
+      <span class="l">Die ehrliche Zusammenfassung</span>
+      Für die meisten Frauen sind <b>Vitamin&nbsp;D (bei Mangel), Omega-3, Kreatin und Magnesium</b> das evidenzbasierte Fundament. Alles darüber ist optional, individuell und gehört an einen Bluttest oder ein konkretes Ziel geknüpft — nicht an den nächsten viralen Post.
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="start">
+  <div class="container">
+    <div class="cta reveal">
+      <h2>Wissen, das dich schützt —<br>nicht verkauft.</h2>
+      <p>Ich baue jede Woche Reels und Vertiefungen wie diese: die Studie hinter der Schlagzeile, ehrlich eingeordnet. Kein Hype, keine Affiliate-Codes — nur das, was die Evidenz hergibt.</p>
+      <a class="btn" href="https://www.instagram.com/" target="_blank" rel="noopener">Folge für mehr auf Instagram →</a>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Newsletter</a>
+        <a href="#">Praxis</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER + FOOTER -->
+<section style="padding-top:20px">
+  <div class="container">
+    <div class="disclaimer reveal">
+      <b>Wichtiger Hinweis.</b> Dieser Inhalt dient der allgemeinen Information und ersetzt keine ärztliche Beratung, Diagnose oder Behandlung. Nahrungsergänzungsmittel können Wechselwirkungen mit Medikamenten und Erkrankungen haben. Sprich vor Beginn einer Supplementierung — besonders in Schwangerschaft, Stillzeit, bei chronischen Erkrankungen oder Medikamenteneinnahme — mit einer Ärztin oder einem Arzt. Genannte Studien sind Momentaufnahmen der Forschung und können sich mit neuer Evidenz ändern.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© 2026 Dr. Lara Vadlau · Evidenzbasierte Longevity</div>
+    <div>Erstellt als Wissens-Vertiefung zum Reel · Keyword: <b style="color:var(--gold)">SUPPLEMENTS</b></div>
+  </div>
+</footer>
+
+<script>
+// progress bar
+const prog=document.getElementById('progress');
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const p=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  prog.style.width=p+'%';
+});
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// expand/collapse supplement cards (progressive enhancement)
+document.querySelectorAll('.supp .top').forEach(t=>{
+  const body=t.parentElement.querySelector('.body');
+  // start expanded on desktop, collapsed on small screens
+  if(window.innerWidth<600){body.style.display='none';t.style.cursor='pointer';
+    t.addEventListener('click',()=>{body.style.display=body.style.display==='none'?'block':'none';});
+  } else { t.style.cursor='default'; }
+});
+</script>
+</body>
+</html>

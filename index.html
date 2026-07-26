@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Supplements: was wirklich wirkt | Dr. Lara Vadlau</title>
 <meta name="description" content="Der ehrliche Longevity-Supplement-Guide von Dr. Lara Vadlau: evidenzbasiert, nach Studienlage sortiert, ohne Hype. Was belegt ist, was Marketing ist, und wie du selbst entscheidest.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Dr. Lara Vadlau · Longevity Medicine">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Supplements: was wirklich wirkt">
+<meta property="og:description" content="Evidenzbasiert nach Studienlage sortiert. Was belegt ist, was Marketing ist.">
+<meta property="og:url" content="https://lara-supplements.vercel.app">
+<meta property="og:image" content="https://lara-supplements.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Supplements: was wirklich wirkt">
+<meta name="twitter:description" content="Evidenzbasiert nach Studienlage sortiert. Was belegt ist, was Marketing ist.">
+<meta name="twitter:image" content="https://lara-supplements.vercel.app/og.jpg">
+<link rel="canonical" href="https://lara-supplements.vercel.app">
+<meta name="theme-color" content="#0d131e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -194,6 +209,45 @@ footer a{color:var(--muted)}
 .band{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative}
 .band img{width:100%;display:block;aspect-ratio:21/9;object-fit:cover}
 .band::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,19,30,.10),rgba(13,19,30,.60));pointer-events:none}
+
+/* more guides */
+.more{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:860px){.more{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.more{grid-template-columns:1fr}}
+.more a{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:20px 22px;display:block;transition:border-color .2s,transform .2s;text-decoration:none}
+.more a:hover{border-color:var(--line);transform:translateY(-2px);text-decoration:none}
+.more a .t{font-family:'Fraunces',serif;font-size:18px;color:#fff;font-weight:500}
+.more a .d{color:var(--muted);font-size:14px;margin-top:4px}
+.more a .go{color:var(--gold);font-size:13px;margin-top:10px;display:block}
+.tools{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.tool-btn{background:transparent;border:1px solid var(--line);color:var(--gold-soft);font-size:13.5px;font-weight:500;padding:11px 20px;border-radius:999px;cursor:pointer;font-family:inherit;transition:background .2s}
+.tool-btn:hover{background:rgba(212,175,55,.08)}
+
+/* print view */
+@media print{
+  @page{margin:16mm}
+  #progress,header,.nl-overlay,.tools,.hero-visual,.band,.cta,.more-sec,.chal{display:none !important}
+  html,body{background:#fff !important;color:#111 !important}
+  body{font-size:11pt}
+  .reveal{opacity:1 !important;transform:none !important}
+  section{padding:10px 0 !important;border-top:none !important;break-inside:avoid}
+  .container{max-width:100% !important;padding:0 !important}
+  h1,h2,h3,h4,.brand,.axis h3,.cat-head h3,.tier-title{color:#111 !important}
+  .eyebrow,.principle .l,.callout .l,.tbl th{color:#8a6d1f !important}
+  p,li,td,.sec-head p,.item .body p,.step p,.model .card p{color:#333 !important}
+  .panel,.model .card,.item,.step,.supp,.fact,.axis,.dd .box,.q,.mech .m,.disclaimer,.callout,.principle,.outcome,.book{background:#fff !important;border:1px solid #ccc !important;box-shadow:none !important;color:#111 !important}
+  .tbl,.tbl-wrap{border-color:#bbb !important}
+  .tbl th{background:#f3f3f3 !important}
+  .tbl tbody tr{background:#fff !important}
+  .tbl td,.tbl th{border-color:#ddd !important}
+  .tbl td.marker,.tbl td.age{color:#111 !important}
+  .tbl td.value,.tbl td.lvl{color:#8a6d1f !important}
+  .item .rec .big,.lever .val .big,.fact .big,.item .num,.lever .num,.step .n{color:#8a6d1f !important}
+  .pill{border-color:#ccc !important;background:#fff !important;color:#333 !important}
+  a{color:#111 !important;text-decoration:none !important}
+  .print-only{display:block !important}
+}
+.print-only{display:none}
 </style>
 </head>
 <body>
@@ -224,6 +278,10 @@ footer a{color:var(--muted)}
     </div>
     <div class="byline reveal">
       <div class="avatar"><img src="lara-avatar.jpg" alt="Dr. Lara Vadlau"></div>
+    <div class="tools reveal">
+      <button class="tool-btn" onclick="window.print()">Als PDF speichern oder drucken</button>
+      <button class="tool-btn" id="shareBtn">Link teilen</button>
+    </div>
       <div>Von <b>Dr. Lara Vadlau</b> · Longevity &amp; evidenzbasierte Prävention</div>
     </div>
     <div class="hero-visual reveal"><img src="hero.webp" alt="Supplement-Flaschen im warmen Licht" loading="eager"></div>
@@ -410,6 +468,26 @@ footer a{color:var(--muted)}
   </div>
 </section>
 
+<!-- MORE GUIDES -->
+<section class="more-sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Weitere Guides</div>
+      <h2>Mehr Longevity-Wissen.</h2>
+      <p>Alle Guides von Dr. Lara Vadlau, jederzeit nachlesbar.</p>
+    </div>
+    <div class="more reveal">
+      <a href="https://lara-blutwerte.vercel.app"><span class="t">Blutwerte</span><span class="d">Optimalwerte-Checkliste</span><span class="go">Ansehen &rarr;</span></a>
+      <a href="https://lara-nierenwerte.vercel.app"><span class="t">Nierenwerte</span><span class="d">welche wirklich zählen</span><span class="go">Ansehen &rarr;</span></a>
+      <a href="https://lara-muskelaufbau.vercel.app"><span class="t">Muskelaufbau</span><span class="d">die 4 Hebel mit Evidenz</span><span class="go">Ansehen &rarr;</span></a>
+      <a href="https://lara-nmn.vercel.app"><span class="t">NMN</span><span class="d">NAD+ ehrlich erklärt</span><span class="go">Ansehen &rarr;</span></a>
+      <a href="https://lara-mikroplastik.vercel.app"><span class="t">Mikroplastik</span><span class="d">die 8 Tauschs in der Küche</span><span class="go">Ansehen &rarr;</span></a>
+      <a href="https://lara-bio.vercel.app"><span class="t">Bio-Einkauf</span><span class="d">wo es sich lohnt</span><span class="go">Ansehen &rarr;</span></a>
+    </div>
+    <p style="margin-top:22px;color:var(--muted-2);font-size:13.5px">Alle Guides auf einen Blick: <a href="https://lara-wissen.vercel.app">lara-wissen.vercel.app</a></p>
+  </div>
+</section>
+
 <!-- DISCLAIMER + FOOTER -->
 <section style="padding-top:20px">
   <div class="container">
@@ -420,7 +498,7 @@ footer a{color:var(--muted)}
 </section>
 
 <!-- CHALLENGE CTA -->
-<section style="padding:0 0 26px">
+<section class="chal" style="padding:0 0 26px">
   <div class="container">
     <div class="reveal" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(212,175,55,.03));border:1px solid var(--line);border-radius:18px;padding:26px 30px">
       <div style="min-width:240px;flex:1">
@@ -506,6 +584,17 @@ document.querySelectorAll('.supp .top').forEach(t=>{
     if(ENDPOINT.indexOf('http')===0){
       fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:body}).then(done).catch(done);
     }else{done();}
+  });
+})();
+
+(function(){
+  var b=document.getElementById('shareBtn'); if(!b) return;
+  b.addEventListener('click',async function(){
+    var d={title:document.title,url:location.href};
+    try{
+      if(navigator.share){await navigator.share(d);}
+      else{await navigator.clipboard.writeText(location.href); b.textContent='Link kopiert';setTimeout(function(){b.textContent='Link teilen';},2000);}
+    }catch(e){}
   });
 })();
 </script>

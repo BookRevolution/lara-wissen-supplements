@@ -186,6 +186,14 @@ footer a{color:var(--muted)}
 .nl-note{margin-top:14px;font-size:11.5px;color:var(--muted-2);line-height:1.5}
 .nl-success{text-align:center;padding:16px 0}
 .nl-success .ok{font-size:44px;color:var(--green);line-height:1;margin-bottom:12px}
+
+/* generated imagery */
+.hero-visual{margin-top:40px;border-radius:20px;overflow:hidden;border:1px solid var(--line);position:relative;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.hero-visual img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.hero-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,19,30,.05),rgba(13,19,30,.55));pointer-events:none}
+.band{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);position:relative}
+.band img{width:100%;display:block;aspect-ratio:21/9;object-fit:cover}
+.band::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,19,30,.10),rgba(13,19,30,.60));pointer-events:none}
 </style>
 </head>
 <body>
@@ -218,6 +226,7 @@ footer a{color:var(--muted)}
       <div class="avatar"><img src="lara-avatar.jpg" alt="Dr. Lara Vadlau"></div>
       <div>Von <b>Dr. Lara Vadlau</b> · Longevity &amp; evidenzbasierte Prävention</div>
     </div>
+    <div class="hero-visual reveal"><img src="hero.webp" alt="Supplement-Flaschen im warmen Licht" loading="eager"></div>
   </div>
 </section>
 
@@ -335,6 +344,13 @@ footer a{color:var(--muted)}
       <div class="l">Warum diese Sortierung dich schützt</div>
       <p>Generische Supplement-Accounts verkaufen dir jede Woche das nächste Molekül. Der Unterschied zu seriöser Longevity: Wir sagen auch, <b>wann Blut nicht Gewebe ist, wann Korrelation nicht Kausalität ist, und wann du dein Geld besser sparst.</b> Genau das trennt Aufklärung von Verkauf.</p>
     </div>
+  </div>
+</section>
+
+<!-- SECTION IMAGE -->
+<section style="padding:0 0 8px;border-top:none">
+  <div class="container">
+    <div class="band reveal"><img src="sec.webp" alt="Kapseln in Nahaufnahme" loading="lazy"></div>
   </div>
 </section>
 
